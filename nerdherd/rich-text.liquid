@@ -1,0 +1,31 @@
+{%- when 'button' -%}
+    <div class="link-list">
+      {%- if block.settings.button_label != blank -%}
+        <div class="img-link" > 
+          <a 
+            {% if block.settings.button_link == blank %}
+               aria-disabled="true"
+            {% else %}
+              href="{{ block.settings.button_link }}" 
+            {% endif %}
+          >
+            <img class="img" src="{{ 'Bishs_logo_blackgd.png' | file_img_url: '100x100' }}" />
+          </a>
+        </div>
+
+      {%- endif -%}
+      {%- if block.settings.button_label_2 != blank -%}
+      <div class="img-link"> 
+        <a
+          {% if block.settings.button_link_2 == blank %}
+             aria-disabled="true"
+          {% else %}
+            href="{{ block.settings.button_link_2 }}"
+          {% endif %}
+        >
+        <img class="img img-rounded" src="{{ 'youtube-logo-jpeg.jpg' | file_img_url: '100x100' }}" />
+        </a>
+      </div>
+      {%- endif -%}
+    </div>
+{%- endcase -%}
